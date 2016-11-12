@@ -1,5 +1,20 @@
 /* styles for laisGeneration */
 
 * {
-	border: 2px solid black;
+	font-family: Helvetica, sans-serif;
+}
+
+#aboutCopy {
+	margin-bottom: 5em;
+}
+
+.mainContainer {
+	width: 100%;
+	max-width: 800px;
+	display: block;
+	margin: auto;
+}
+
+#lai {
+	text-align: center;
 }

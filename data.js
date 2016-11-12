@@ -1,35 +1,5 @@
 // Panel objects for Lais generation
 var laiPanels = [
-	/*{
-		brutal: 1,
-		passion: 0,
-		src: "panels/brutal1.png"
-	},
-
-	{
-		brutal: 2,
-		passion: 0,
-		src: "panels/brutal2.png"
-	},
-
-	{
-		brutal: 3,
-		passion: 0,
-		src: "panels/brutal3.png"
-	},
-
-	{
-		brutal: 4,
-		passion: 0,
-		src: "panels/brutal4.png"
-	},
-
-	{
-		brutal: 5,
-		passion: 0,
-		src: "panels/brutal5.png"
-	},*/
-
 	{
 		brutal: 0,
 		passion: 0,
@@ -124,12 +94,6 @@ var laiPanels = [
 		brutal: 0,
 		passion: 3,
 		src: "panels/powerDynamic.png"
-	},
-
-	{
-		brutal: 2,
-		passion: 4,
-		src: "panels/stewardsWife.png"
 	},
 
 	{

@@ -4,6 +4,7 @@ $(document).ready(function(){
 	$("#aboutCopy").hide();
 	$("#aboutHead").click(function(){
 		$("#aboutCopy").show();
+		$('html, body').scrollTop( $(document).height() );
 	});
 })
 
