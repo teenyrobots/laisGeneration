@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>The Lais of Marie de France</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script type="text/javascript" src="lais-panels.js"></script>
+		<script type="text/javascript" src="lais.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+	</head>
+
+	<body>
+		<h1>The Lais of Marie de France</h1>
+		<p>The Lais of Marie de France were a series of parables written in midieval Europe. They served as investigation of love in all its forms for the times. Use this tool to generate your own lai!</p>
+		<h2>create your own!!</h2>
+
+		<h3>choices:</h3>
+		<p>gentle 1 > brutal 40</p>
+		<input id="playerBrutality" type="range" min="1" max="40" step="1" />
+		<p>honorable 1 > passionate 40</p>
+		<p>[not yet trackable]</p>
+		<input id="playerHonor" type="range" min="0" max="40" step="1" />
+		<p>one knight 1 > fuck ton of knights 5</p>
+		<p>[not yet trackable]</p>
+		<input id="playerKnights" type="range" min="0" max="40" step="1" />
+		<br>
+		<button id="btn" onClick="generateLai()" class="button">go</button>
+
+		<h3>okay here is your lai:</h3>
+
+		<div id="lai">
+		</div>
+
+		<div id="aboutHead" onClick="expandAbout()" style="color: blue; text-decoration: underline; cursor: pointer"><h2>About</h2></div>
+		<div id="aboutCopy"><p>"We know very little about Marie de France besides her name, her work, and her position as the first major woman writer in medieval Europe. She composed the lais (short verse stories that resemble fairy tales) sometime between 1160 and 1199."</p>
+
+		<p>Marie de France wrote parables about love in medieval times. They often included some kind of "lesson" or moral, but mostly served as an investigation of different kinds of feelings and relationships between people. They ranged from fairytellesque to the absurd. She wrote about idealized love, emotional love, and physical love using an almost stock cast of characters and settings to investigate these ideas.</p><div>
+
+
+
+	</body>
+
+</html>
