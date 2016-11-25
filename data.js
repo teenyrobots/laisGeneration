@@ -3,19 +3,22 @@ var laiPanels = [
 	{
 		brutal: 0,
 		passion: 0,
-		src: "panels/nuns1.png"
+		src: "panels/nuns1.png",
+		alt: "one nun saying 'I guess i'll become a nun'"
 	},
 
 	{
 		brutal: 0,
 		passion: 0,
-		src: "panels/nuns2.png"
+		src: "panels/nuns2.png",
+		alt: "two happy nuns"
 	},
 
 	{
 		brutal: 0,
 		passion: 1,
-		src: "panels/towers.png"
+		src: "panels/towers.png",
+		alt: "two towers facing each other, the lady says 'i'm so in love' and the dude says 'yah me too'"
 	},
 
 	{
@@ -109,7 +112,7 @@ var laiPanels = [
 	}
 ]
 
-var unbrutalPanels = [];
+/*var unbrutalPanels = [];
 	for (i = 0; i < laiPanels.length; i++) {
 		if (laiPanels[i].brutal == 0) {
 			unbrutalPanels.push(laiPanels[i]);
@@ -122,7 +125,7 @@ var moreBrutalPanels = [];
 			moreBrutalPanels.push(laiPanels[i]);
 		}
 	}
-
+*/
 
 
 
