@@ -1,5 +1,10 @@
 // Javascript for Lais of Marie de France
 
+/*TODO
+[ ] redraw panels
+[ ] properly categorize them
+*/
+
 //jQuery initialize
 $(document).ready(function(){
 	$("#aboutCopy").hide();
@@ -9,6 +14,9 @@ $(document).ready(function(){
 	});
 })
 
+var overallBrutality = 0;
+var overallPassion = 0;
+
 //splices 90% of panels meeting condition
 function ninetySplicer(i) {
 	var randomSplicer = Math.floor(Math.random() * 11);
@@ -17,72 +25,20 @@ function ninetySplicer(i) {
 			}
 }
 
-//make a lai!
-function generateLai2() {
-	var playerBrutality = document.getElementById("playerBrutality").value;
-	var playerPassion = document.getElementById("playerPassion").value;
-	//var playerKnights = document.getElementById("playerKnights").value;
-
-	var overallBrutality = 0;
-	var overallPassion = 0;
-	//var overallKnights = i haven't figured this out yet;
-
-	//splice most of the brutalest ones
-	if (playerBrutality < 11) {
-		for (var i=0; i<laiPanels.length; i++) {
-			if (laiPanels[i].brutal>3){
-				ninetySplicer(i);
-			}
-		}
-		//console.log("i spliced lots of brutal panels");
-	}
-	//splice most of the least brutal things
-	if (playerBrutality > 30){
-		for (var i=0; i<laiPanels.length; i++){
-			if(laiPanels[i].brutal<2){
-				ninetySplicer(i);
-			}
-		}
-		//console.log("i spliced lots of gentle panels");
-	}
-
-	//splice most of the passionest ones
-	if (playerPassion < 11) {
-		for (var i=0; i<laiPanels.length; i++) {
-			if (laiPanels[i].passion>3){
-				ninetySplicer(i);
-			}
-		}
-		console.log("i spliced lots of passionate panels");
-	}
-	//splice most of the honorablest things
-	if (playerPassion > 30){
-		for (var i=0; i<laiPanels.length; i++){
-			if(laiPanels[i].passion<2){
-				ninetySplicer(i);
-			}
-		}
-		console.log("i spliced lots of honorable panels");
-	}
-
-	for (var i=0; i<4; i++) {
-		var randomPanel = Math.floor(Math.random() * laiPanels.length) + 0;
-		var panel = document.createElement("img");
-		panel.src = laiPanels[randomPanel].src;
-		document.getElementById("lai").appendChild(panel);
-
-		//check up on current meters:
-		overallBrutality += laiPanels[randomPanel].brutal;
-		console.log("overallBrutality is: "+overallBrutality);
-		overallPassion += laiPanels[randomPanel].passion;
-		console.log("overallPassion is: "+overallPassion);
-
-		//cut the panel we just used
-		laiPanels.splice(randomPanel, 1);
-
-		//if diff between playerBrutality and overallBrutality is less than x, remove all panels from the list that are too brutal
-		//but maybe it should be: if remaining brutality is a certain percentage of playerBrutality then splice all the super brutal ones OR the not brutal ones
-		if ((playerBrutality - overallBrutality) < 7) {
+//insert the panel
+function insertPanel(randomPanel, playerBrutality, playerPassion) {
+	//insert the panel
+	var panel = document.createElement("img");
+	panel.src = laiPanels[randomPanel].src;
+	document.getElementById("lai").appendChild(panel);
+	laiPanels.splice(randomPanel, 1);
+	//check up on current meters:
+	overallBrutality += laiPanels[randomPanel].brutal;
+	console.log("overallBrutality is: "+overallBrutality);
+	overallPassion += laiPanels[randomPanel].passion;
+	console.log("overallPassion is: "+overallPassion);
+	//get rid of stuff that is too extreme
+	if ((playerBrutality - overallBrutality) < 7) {
 			console.log("remainingBrutality is too low");
 			for (var j=0; j<laiPanels.length; j++) {
 				if (laiPanels[j].brutal == 5) {
@@ -90,36 +46,129 @@ function generateLai2() {
 				}
 			}
 		}
-		if ((playerPassion - overallPassion) < 7) {
-			console.log("remainingPassion is too low");
-			for (var j=0; j<laiPanels.length; j++) {
-				if (laiPanels[j].passion == 5) {
-					laiPanels.splice(j, 1);
-				}
+	if ((playerPassion - overallPassion) < 7) {
+		console.log("remainingPassion is too low");
+		for (var j=0; j<laiPanels.length; j++) {
+			if (laiPanels[j].passion == 5) {
+				laiPanels.splice(j, 1);
 			}
 		}
+	}
+}
 
-		if (i==7) {
-			console.log("the player brutality was: "+playerBrutality);
-			console.log("the final brutality was: "+overallBrutality);
-			console.log("the player passion was: "+playerPassion);
-			console.log("the final passion was: "+overallPassion);
+function reloadLai() {
+	window.location.reload();
+	scroll(0,0);
+}
+
+//make a lai!
+function generateLai2() {
+	var playerBrutality = document.getElementById("playerBrutality").value;
+	var playerPassion = document.getElementById("playerPassion").value;
+	//var playerKnights = document.getElementById("playerKnights").value;
+
+
+	//var overallKnights = i haven't figured this out yet;
+
+	//INITIAL SPLICING
+	if (playerBrutality < 11) {
+		for (var i=0; i<laiPanels.length; i++) {
+			if (laiPanels[i].brutal>3){
+				ninetySplicer(i);
+			}
 		}
-
-		//NOTES
-		//if there are too many knights, don't introduce any new nights (string based?)
-
+	}
+	if (playerBrutality > 30){
+		for (var i=0; i<laiPanels.length; i++){
+			if(laiPanels[i].brutal<2){
+				ninetySplicer(i);
+			}
+		}
+	}
+	if (playerPassion < 11) {
+		for (var i=0; i<laiPanels.length; i++) {
+			if (laiPanels[i].passion>3){
+				ninetySplicer(i);
+			}
+		}
+	}
+	if (playerPassion > 30){
+		for (var i=0; i<laiPanels.length; i++){
+			if(laiPanels[i].passion<2){
+				ninetySplicer(i);
+			}
+		}
 	}
 
-	//print out the src's for the panels left in the array
-	/*for (var k=0; k<laiPanels.length; k++) {
-			console.log(laiPanels[k].src);
-	}*/
+	//PANEL ONE:
+	var panelOneInserted = false;
+	while (panelOneInserted == false) {
+		var randomPanel = Math.floor(Math.random() * laiPanels.length) + 0;
+		if (laiPanels[randomPanel].beginning === true){
+			insertPanel(randomPanel, playerBrutality, playerPassion);
+			panelOneInserted = true;
+			console.log("a panel was inserted!!");
+		} else {
+			console.log("a panel was not inserted");
+		}
+	}
+	
+	//PANEL TWO
+	var panelTwoInserted = false;
+	while (panelTwoInserted == false) {
+		var randomPanel = Math.floor(Math.random() * laiPanels.length) + 0;
+		if (laiPanels[randomPanel].middle === true){
+			insertPanel(randomPanel, playerBrutality, playerPassion);
+			panelTwoInserted = true;
+			console.log("a panel was inserted!!");
+		} else {
+			console.log("a panel was not inserted");
+		}
+	}
+
+	//PANEL THREE
+	var panelThreeInserted = false;
+	while (panelThreeInserted == false) {
+		var randomPanel = Math.floor(Math.random() * laiPanels.length) + 0;
+		if (laiPanels[randomPanel].middle === true){
+			insertPanel(randomPanel, playerBrutality, playerPassion);
+			panelThreeInserted = true;
+			console.log("a panel was inserted!!");
+		} else {
+			console.log("a panel was not inserted");
+		}
+	}
+
+	//PANEL FOUR
+	var panelFourInserted = false;
+	while (panelFourInserted == false) {
+		var randomPanel = Math.floor(Math.random() * laiPanels.length) + 0;
+		if (laiPanels[randomPanel].end === true){
+			insertPanel(randomPanel, playerBrutality, playerPassion);
+			panelFourInserted = true;
+			console.log("a panel was inserted!!");
+		} else {
+			console.log("a panel was not inserted");
+		}
+	}
+
+	//PLAY AGAIN
+	var playAgain = document.createElement("img");
+	playAgain.src = "panels/end.jpg";
+	playAgain.onclick = reloadLai;
+	document.getElementById("lai").appendChild(playAgain);
+
+	//FINAL CHECKUP
+	console.log("the player brutality was: "+playerBrutality);
+	console.log("the final brutality was: "+overallBrutality);
+	console.log("the player passion was: "+playerPassion);
+	console.log("the final passion was: "+overallPassion);
+	
+	//Knights??
 
 	var btn = document.getElementById("btn");
 	btn.disabled = true;
 }
-
 
 
 // NOTES
