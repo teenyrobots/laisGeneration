@@ -36,7 +36,6 @@ function generateLai2() {
 		}
 		//console.log("i spliced lots of brutal panels");
 	}
-
 	//splice most of the least brutal things
 	if (playerBrutality > 30){
 		for (var i=0; i<laiPanels.length; i++){
@@ -56,7 +55,6 @@ function generateLai2() {
 		}
 		console.log("i spliced lots of passionate panels");
 	}
-
 	//splice most of the honorablest things
 	if (playerPassion > 30){
 		for (var i=0; i<laiPanels.length; i++){
@@ -67,7 +65,7 @@ function generateLai2() {
 		console.log("i spliced lots of honorable panels");
 	}
 
-	for (var i=0; i<8; i++) {
+	for (var i=0; i<4; i++) {
 		var randomPanel = Math.floor(Math.random() * laiPanels.length) + 0;
 		var panel = document.createElement("img");
 		panel.src = laiPanels[randomPanel].src;

@@ -16,119 +16,101 @@ var laiPanels = [
 
 	{
 		brutal: 0,
-		passion: 1,
+		passion: 2,
 		src: "panels/towers.png",
 		alt: "two towers facing each other, the lady says 'i'm so in love' and the dude says 'yah me too'"
 	},
 
 	{
-		brutal: 2,
+		brutal: 4,
 		passion: 0,
 		src: "panels/werewolf.png"
 	},
 
 	{
 		brutal: 0,
-		passion: 3,
+		passion: 6,
 		src: "panels/neverBetray.png"
 	},
 
 	{
-		brutal: 4,
+		brutal: 8,
 		passion: 0,
 		src: "panels/anOmen.png"
 	},
 
 	{
-		brutal: 5,
+		brutal: 10,
 		passion: 0,
 		src: "panels/realDad.png"
 	},
 
 	{
-		brutal: 1,
+		brutal: 2,
 		passion: 0,
 		src: "panels/hideClothes.png"
 	},
 
 	{
-		brutal: 5,
+		brutal: 10,
 		passion: 0,
 		src: "panels/nightingale.png"
 	},
 
 	{
-		brutal: 3,
+		brutal: 6,
 		passion: 0,
 		src: "panels/boat.png"
 	},
 
 	{
-		brutal: 1,
+		brutal: 2,
 		passion: 0,
 		src: "panels/tower.png"
 	},
 
 	{
-		brutal: 1,
-		passion: 5,
+		brutal: 2,
+		passion: 10,
 		src: "panels/dieFuckMe.png"
 	},
 
 	{
 		brutal: 0,
-		passion: 4,
+		passion: 8,
 		src: "panels/allWomens.png"
 	},
 
 	{
 		brutal: 0,
-		passion: 1,
+		passion: 2,
 		src: "panels/broGrabs.png"
 	},
 
 	{
-		brutal: 2,
+		brutal: 4,
 		passion: 0,
 		src: "panels/inspireLoyalty.png"
 	},
 
 	{
 		brutal: 0,
-		passion: 3,
+		passion: 6,
 		src: "panels/powerDynamic.png"
 	},
 
 	{
-		brutal: 3,
-		passion: 3,
+		brutal: 6,
+		passion: 6,
 		src: "panels/killHusband.png"
 	},
 
 	{
-		brutal: 4,
+		brutal: 8,
 		passion: 0,
 		src: "panels/brobaths.png"
 	}
 ]
-
-/*var unbrutalPanels = [];
-	for (i = 0; i < laiPanels.length; i++) {
-		if (laiPanels[i].brutal == 0) {
-			unbrutalPanels.push(laiPanels[i]);
-		}
-	}
-
-var moreBrutalPanels = [];
-	for (i = 0; i < laiPanels.length; i++) {
-		if (laiPanels[i].brutal > 2) {
-			moreBrutalPanels.push(laiPanels[i]);
-		}
-	}
-*/
-
-
-
 
 
 
