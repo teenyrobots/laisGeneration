@@ -70,10 +70,14 @@ function reloadLai() {
 }
 
 //make a lai!
-function generateLai2() {
-	var playerBrutality = document.getElementById("playerBrutality").value;
-	var playerPassion = document.getElementById("playerPassion").value;
+function generateLai2(options) {
+	// var playerBrutality = document.getElementById("playerBrutality").value;
+	// var playerPassion = document.getElementById("playerPassion").value;
 	//var playerKnights = document.getElementById("playerKnights").value;
+
+
+	var playerBrutality = options.playerBrutality,
+		playerPassion = options.playerPassion;
 
 	//var overallKnights = i haven't figured this out yet;
 

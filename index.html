@@ -13,32 +13,84 @@
 			<p>The Lais of Marie de France were a series of parables written in midieval Europe. They served as investigation of love in all its forms for the times. Use this tool to generate your own lai!</p>
 			<h2>create your own!!</h2>
 
-			<h3>choices:</h3>
-			<p>gentle 1 > brutal 40</p>
-			<input id="playerBrutality" type="range" min="1" max="40" step="1" />
-			<p>honorable 1 > passionate 40</p>
-			<input id="playerPassion" type="range" min="0" max="40" step="1" />
-			<p>one knight 1 > fuck ton of knights 5</p>
-			<p>[not yet trackable]</p>
-			<input id="playerKnights" type="range" min="0" max="40" step="1" />
-			<br>
-			<button id="btn" onClick="generateLai2()" class="button">go</button>
+			<form
+				id="laiGenerator"
+				name="laiGenerator"
+				method="#"
+			>
+				<h3>choices:</h3>
+				<p>gentle 1 > brutal 40</p>
+				<input
+					id="playerBrutality"
+					name="playerBrutality"
+					type="range" min="1"
+					max="40"
+					step="1"
+				/>
+				<p>honorable 1 > passionate 40</p>
+				<input id="playerPassion"
+				   name="playerPassion"
+				   type="range"
+				   min="0"
+				   max="40"
+				   step="1"
+				/>
+				<p>one knight 1 > fuck ton of knights 5</p>
+				<p>[not yet trackable]</p>
+				<input
+					id="playerKnights"
+					name="playerKnights"
+					type="range"
+					min="0"
+					max="40"
+					step="1"
+				/>
+				<br>
+				<input type="submit" id="btn" class="button" value="go" />
+			</form>
 
 			<h3>okay here is your lai:</h3>
 
 			<div id="lai">
 			</div>
 
-			<div id="aboutHead" onClick="expandAbout()" style="color: blue; text-decoration: underline; cursor: pointer"><h2>About</h2></div>
+			<div id="aboutHead" onClick="expandAbout()" style="color: blue; text-decoration: underline; cursor: pointer"><h2>About</h2>
+			</div>
 			<div id="aboutCopy"><p>"We know very little about Marie de France besides her name, her work, and her position as the first major woman writer in medieval Europe. She composed the lais (short verse stories that resemble fairy tales) sometime between 1160 and 1199."</p>
 
-			<p>Marie de France wrote parables about love in medieval times. They often included some kind of "lesson" or moral, but mostly served as an investigation of different kinds of feelings and relationships between people. They ranged from fairytellesque to the absurd. She wrote about idealized love, emotional love, and physical love using an almost stock cast of characters and settings to investigate these ideas.</p><div>
+			<p>Marie de France wrote parables about love in medieval times. They often included some kind of "lesson" or moral, but mostly served as an investigation of different kinds of feelings and relationships between people. They ranged from fairytellesque to the absurd. She wrote about idealized love, emotional love, and physical love using an almost stock cast of characters and settings to investigate these ideas.</p>
 		</div>
+	</div>
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script type="text/javascript" src="script.js"></script>
 		<script type="text/javascript" src="data.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+
+
+	<script>
+		// TODO: Move this to script.js
+
+		function getInputs() {
+			var values = {};
+			var $inputs = $('#laiGenerator :input');
+			$inputs.each(function() {
+				values[this.name] = $(this).val();
+			});
+
+			return values;
+		}
+
+		$('#laiGenerator').submit(function(event) {
+
+			var laiValues = getInputs();
+			generateLai2(laiValues);
+
+			event.preventDefault();
+		})
+	</script>
+
+
 
 	</body>
 
