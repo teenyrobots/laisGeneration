@@ -13,15 +13,38 @@
 			<p>The Lais of Marie de France were a series of parables written in midieval Europe. They served as investigation of love in all its forms for the times. Use this tool to generate your own lai!</p>
 			<h2>create your own!!</h2>
 
-			<form id="laiGenerator" name="laiGenerator">
+			<form
+				id="laiGenerator"
+				name="laiGenerator"
+				method="#"
+			>
 				<h3>choices:</h3>
 				<p>gentle 1 > brutal 40</p>
-				<input id="playerBrutality" type="range" min="1" max="40" step="1" />
+				<input
+					id="playerBrutality"
+					name="playerBrutality"
+					type="range" min="1"
+					max="40"
+					step="1"
+				/>
 				<p>honorable 1 > passionate 40</p>
-				<input id="playerPassion" type="range" min="0" max="40" step="1" />
+				<input id="playerPassion"
+				   name="playerPassion"
+				   type="range"
+				   min="0"
+				   max="40"
+				   step="1"
+				/>
 				<p>one knight 1 > fuck ton of knights 5</p>
 				<p>[not yet trackable]</p>
-				<input id="playerKnights" type="range" min="0" max="40" step="1" />
+				<input
+					id="playerKnights"
+					name="playerKnights"
+					type="range"
+					min="0"
+					max="40"
+					step="1"
+				/>
 				<br>
 				<input type="submit" id="btn" class="button" value="go" />
 			</form>
@@ -46,8 +69,23 @@
 
 
 	<script>
+		// TODO: Move this to script.js
+
+		function getInputs() {
+			var values = {};
+			var $inputs = $('#laiGenerator :input');
+			$inputs.each(function() {
+				values[this.name] = $(this).val();
+			});
+
+			return values;
+		}
+
 		$('#laiGenerator').submit(function(event) {
-			generateLai2(event);
+
+			var laiValues = getInputs();
+			generateLai2(laiValues);
+
 			event.preventDefault();
 		})
 	</script>
