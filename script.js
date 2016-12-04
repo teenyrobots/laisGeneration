@@ -70,7 +70,10 @@ function reloadLai() {
 }
 
 //make a lai!
-function generateLai2() {
+function generateLai2(event) {
+	console.log("-----------------");
+	console.dir(event);
+
 	var playerBrutality = document.getElementById("playerBrutality").value;
 	var playerPassion = document.getElementById("playerPassion").value;
 	//var playerKnights = document.getElementById("playerKnights").value;
