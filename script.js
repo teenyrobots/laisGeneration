@@ -17,24 +17,23 @@ $(document).ready(function(){
 var overallBrutality = 0;
 var overallPassion = 0;
 
-//splices 90% of panels meeting condition
+//splices X% of panels meeting condition
 function mySplicer(i, x) {
 	var randomSplicer = Math.floor(Math.random() * 11);
-			if (randomSplicer < x) {
-				laiPanels.splice(i,1);
-			}
+	if (randomSplicer < x) {
+		laiPanels.splice(i,1);
+	}
 }
 
 //insert the panel
-function insertPanel(randomPanel, playerBrutality, playerPassion) {
+function insertPanel(randomPanel, playerBrutality, playerPassion, panelNumber) {
 	//insert the panel
+	console.log(panelNumber);
 	var panel = document.createElement("img");
 	panel.src = laiPanels[randomPanel].src;
 	console.log(laiPanels[randomPanel].src);
 	document.getElementById("lai").appendChild(panel);
-	laiPanels.splice(randomPanel, 1);
 	//check up on current meters:
-//	console.log(randomPanel);
 	overallBrutality += laiPanels[randomPanel].brutal;
 	console.log("overallBrutality is: "+overallBrutality);
 	overallPassion += laiPanels[randomPanel].passion;
@@ -56,6 +55,13 @@ function insertPanel(randomPanel, playerBrutality, playerPassion) {
 			}
 		}
 	}
+	if (panelNumber == 3){
+		$(panel).css("background-color", "red");
+		console.log("the background is red ok");
+	} else {
+		console.log("yo the bg is not red");
+	}
+	laiPanels.splice(randomPanel, 1);
 }
 
 function reloadLai() {
@@ -68,7 +74,6 @@ function generateLai2() {
 	var playerBrutality = document.getElementById("playerBrutality").value;
 	var playerPassion = document.getElementById("playerPassion").value;
 	//var playerKnights = document.getElementById("playerKnights").value;
-
 
 	//var overallKnights = i haven't figured this out yet;
 
@@ -107,11 +112,8 @@ function generateLai2() {
 	while (panelOneInserted == false) {
 		var randomPanel = Math.floor(Math.random() * laiPanels.length);
 		if (laiPanels[randomPanel].beginning === true){
-			insertPanel(randomPanel, playerBrutality, playerPassion);
+			insertPanel(randomPanel, playerBrutality, playerPassion, 1);
 			panelOneInserted = true;
-			console.log("a panel was inserted!!");
-		} else {
-			console.log("a panel was not inserted");
 		}
 	}
 	
@@ -120,11 +122,8 @@ function generateLai2() {
 	while (panelTwoInserted == false) {
 		var randomPanel = Math.floor(Math.random() * laiPanels.length);
 		if (laiPanels[randomPanel].middle === true){
-			insertPanel(randomPanel, playerBrutality, playerPassion);
+			insertPanel(randomPanel, playerBrutality, playerPassion, 2);
 			panelTwoInserted = true;
-			console.log("a panel was inserted!!");
-		} else {
-			console.log("a panel was not inserted");
 		}
 	}
 
@@ -133,14 +132,8 @@ function generateLai2() {
 	while (panelThreeInserted == false) {
 		var randomPanel = Math.floor(Math.random() * laiPanels.length);
 		if (laiPanels[randomPanel].middle === true){
-			insertPanel(randomPanel, playerBrutality, playerPassion);
+			insertPanel(randomPanel, playerBrutality, playerPassion, 3);
 			panelThreeInserted = true;
-			console.log("a panel was inserted!!");
-
-			//$(panel).css("background-color","red");
-
-		} else {
-			console.log("a panel was not inserted");
 		}
 	}
 
@@ -149,11 +142,8 @@ function generateLai2() {
 	while (panelFourInserted == false) {
 		var randomPanel = Math.floor(Math.random() * laiPanels.length);
 		if (laiPanels[randomPanel].end === true){
-			insertPanel(randomPanel, playerBrutality, playerPassion);
+			insertPanel(randomPanel, playerBrutality, playerPassion, 4);
 			panelFourInserted = true;
-			console.log("a panel was inserted!!");
-		} else {
-			console.log("a panel was not inserted");
 		}
 	}
 
@@ -180,10 +170,4 @@ function generateLai2() {
 
 // Returns a random integer between min and max:
 // Math.floor(Math.random() * (max - min + 1)) + min;
-
-
-
-
-
-
 
