@@ -57,9 +57,6 @@ function insertPanel(randomPanel, playerBrutality, playerPassion, panelNumber) {
 	}
 	if (panelNumber == 3){
 		$(panel).css("background-color", "red");
-		console.log("the background is red ok");
-	} else {
-		console.log("yo the bg is not red");
 	}
 	laiPanels.splice(randomPanel, 1);
 }
@@ -84,28 +81,28 @@ function generateLai2(options) {
 	//INITIAL SPLICING
 	if (playerBrutality < 11) {
 		for (var i=0; i<laiPanels.length; i++) {
-			if (laiPanels[i].brutal>3){
+			if (laiPanels[i].brutal>5){
 				mySplicer(i, 10);
 			}
 		}
 	}
 	if (playerBrutality > 30){
 		for (var i=0; i<laiPanels.length; i++){
-			if(laiPanels[i].brutal<2){
+			if(laiPanels[i].brutal<7){
 				mySplicer(i, 10);
 			}
 		}
 	}
 	if (playerPassion < 11) {
 		for (var i=0; i<laiPanels.length; i++) {
-			if (laiPanels[i].passion>3){
+			if (laiPanels[i].passion>5){
 				mySplicer(i, 10);
 			}
 		}
 	}
 	if (playerPassion > 30){
 		for (var i=0; i<laiPanels.length; i++){
-			if(laiPanels[i].passion<2){
+			if(laiPanels[i].passion<7){
 				mySplicer(i, 10);
 			}
 		}

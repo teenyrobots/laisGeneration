@@ -205,5 +205,86 @@ var laiPanels = [
    "beginning": true,
    "middle": true,
    "end": false
+ },
+ {
+   "ID": 23,
+   "src": "panels/nutsLockedUp.png",
+   "brutal": 1,
+   "passion": 0,
+   "beginning": true,
+   "middle": true,
+   "end": true
+ },
+ {
+   "ID": 24,
+   "src": "panels/stewardsWife.png",
+   "brutal": 4,
+   "passion": 7,
+   "beginning": true,
+   "middle": true,
+   "end": false
+ },
+ {
+   "ID": 25,
+   "src": "panels/sorryNotSorry.png",
+   "brutal": 8,
+   "passion": 7,
+   "beginning": true,
+   "middle": true,
+   "end": true
+ },
+ {
+   "ID": 26,
+   "src": "panels/allTheLadies.png",
+   "brutal": 0,
+   "passion": 6,
+   "beginning": true,
+   "middle": true,
+   "end": false
+ },
+ {
+   "ID": 27,
+   "src": "panels/broNeverBetray.png",
+   "brutal": 1,
+   "passion": 0,
+   "beginning": true,
+   "middle": true,
+   "end": false
+ },
+ {
+   "ID": 28,
+   "src": "panels/token.png",
+   "brutal": 2,
+   "passion": 5,
+   "beginning": true,
+   "middle": true,
+   "end": false
+ },
+ {
+   "ID": 29,
+   "src": "panels/gkStab.png",
+   "brutal": 10,
+   "passion": 5,
+   "beginning": false,
+   "middle": true,
+   "end": true
+ },
+ {
+   "ID": 30,
+   "src": "panels/bkStab.png",
+   "brutal": 10,
+   "passion": 7,
+   "beginning": false,
+   "middle": true,
+   "end": true
+ },
+ {
+   "ID": 31,
+   "src": "panels/legitHeir.png",
+   "brutal": 1,
+   "passion": 7,
+   "beginning": true,
+   "middle": true,
+   "end": false
  }
 ]
