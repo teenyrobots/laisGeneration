@@ -266,7 +266,7 @@ var laiPanels = [
    "brutal": 10,
    "passion": 5,
    "beginning": false,
-   "middle": true,
+   "middle": false,
    "end": true
  },
  {
@@ -275,7 +275,7 @@ var laiPanels = [
    "brutal": 10,
    "passion": 7,
    "beginning": false,
-   "middle": true,
+   "middle": false,
    "end": true
  },
  {

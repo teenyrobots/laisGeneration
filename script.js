@@ -150,7 +150,8 @@ function generateLai2(options) {
 
 	//PLAY AGAIN
 	var playAgain = document.createElement("img");
-	playAgain.src = "panels/end.jpg";
+	playAgain.src = "images/end.jpg";
+	playAgain.style="margin-bottom: 2em";
 	playAgain.onclick = reloadLai;
 	document.getElementById("lai").appendChild(playAgain);
 

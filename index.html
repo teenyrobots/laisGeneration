@@ -5,60 +5,84 @@
 	<head>
 		<title>The Lais of Marie de France</title>		
 		<link rel="stylesheet" type="text/css" href="styles.css">
+		<meta charset="utf-8" name=viewport content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Slabo+27px" rel="stylesheet">
 	</head>
 
 	<body>
 		<div class="mainContainer">
-			<h1>The Lais of Marie de France</h1>
-			<p>The Lais of Marie de France were a series of parables written in midieval Europe. They served as investigation of love in all its forms for the times. Use this tool to generate your own lai!</p>
-			<h2>create your own!!</h2>
+			<img src="images/title.jpg" class="centerImg">
+			<p>The Lais of Marie de France are a series of twelve short poems about courtly love composed in the twelfth century. Although they are nearly a thousand years old, their lessons about sweet, sweet romancing persist.</p>
+			<hr>
 
-			<form
-				id="laiGenerator"
-				name="laiGenerator"
-				method="#"
-			>
-				<h3>choices:</h3>
-				<p>gentle > brutal</p>
-				<input
-					id="playerBrutality"
-					name="playerBrutality"
-					type="range" min="1"
-					max="40"
-					step="1"
-				/>
-				<p>honorable > passionate</p>
-				<input id="playerPassion"
-				   name="playerPassion"
-				   type="range"
-				   min="0"
-				   max="40"
-				   step="1"
-				/>
-				<p>0 knights > fuck ton of knights </p>
-				<p>[not yet trackable]</p>
-				<input
-					id="playerKnights"
-					name="playerKnights"
-					type="range"
-					min="0"
-					max="40"
-					step="1"
-				/>
-				<br>
-				<input type="submit" id="btn" class="button" value="go" />
-			</form>
+			<div class="instructions">
+				<h2 class=>generate your own comic lai:</h2>
 
-			<h3>okay here is your lai:</h3>
+				<form
+					id="laiGenerator"
+					name="laiGenerator"
+					method="#"
+				>
+					<div class="sliders">
+						<img src="images/gentle.jpg">
+						<input
+							id="playerBrutality"
+							name="playerBrutality"
+							type="range" 
+							min="1"
+							max="40"
+							step="1"
+						/>
+						<img src="images/brutal.jpg">
+					</div>
+					<div class="sliders">
+						<img src="images/honorable.jpg">
+						<input id="playerPassion"
+						   name="playerPassion"
+						   type="range"
+						   min="1"
+						   max="40"
+						   step="1"
+						/>
+						<img src="images/passionate.jpg">
+					</div>
+					<!--<p>0 knights > fuck ton of knights </p>
+					<p>[not yet trackable]</p>
+					<input
+						id="playerKnights"
+						name="playerKnights"
+						type="range"
+						min="0"
+						max="40"
+						step="1"
+					/>-->
+					<br>
+					<input type="submit" id="btn" class="button" value="go"/>
+				</form>
+			</div>
 
 			<div id="lai">
 			</div>
 
-			<div id="aboutHead" onClick="expandAbout()" style="color: blue; text-decoration: underline; cursor: pointer"><h2>About</h2>
-			</div>
-			<div id="aboutCopy"><p>"We know very little about Marie de France besides her name, her work, and her position as the first major woman writer in medieval Europe. She composed the lais (short verse stories that resemble fairy tales) sometime between 1160 and 1199."</p>
+			<hr>
 
-			<p>Marie de France wrote parables about love in medieval times. They often included some kind of "lesson" or moral, but mostly served as an investigation of different kinds of feelings and relationships between people. They ranged from fairytellesque to the absurd. She wrote about idealized love, emotional love, and physical love using an almost stock cast of characters and settings to investigate these ideas.</p>
+			<div id="aboutHead" onClick="expandAbout()"><img src="images/about.jpg">
+			</div>
+
+			<div id="aboutCopy">
+				<p>Although she was the first major lady writer in medieval Europe, we know very little about Marie de France except that she composed her poetry sometime between 1160 and 1199. Her parables resemble fairy tales in their cast of characters and narrative structure, but served more as a deep investigation of romantic love itself than vehicles for moral instruction.</p>
+
+				<p>This Marie de France comic generator was designed, illustrated, and coded by Joyce Rice in 2016. For more info on how it works, <a href="https://github.com/teenyrobots/laisGeneration">check out the repository on github</a>. For more digital comics, drawings, and pictures of my chickens, <a href="https://twitter.com/teenyrobots">follow me on twitter</a>.</p>
+			</div>
+
+			<hr>
+			
+			<div id="footer">
+				<p>thanks!</p>
+				<a href="https://www.instagram.com/teenyrobots/" target="_blank"><img src="images/grams.jpg"></a>
+				<a href="https://twitter.com/teenyrobots" target="_blank"><img src="images/twitter.jpg"></a>
+				<a href="mailto:joycer@teenyrobots.net?Subject=Hello%20friend" target="_blank"><img src="images/mail.jpg"></a>
+			</div>
 		</div>
 	</div>
 
