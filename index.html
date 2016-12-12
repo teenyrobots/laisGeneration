@@ -12,11 +12,10 @@
 	<body>
 		<div class="mainContainer">
 			<img src="images/title.jpg" class="centerImg">
-			<p>The Lais of Marie de France are a series of twelve short poems about courtly love composed in the twelfth century. Although they are nearly a thousand years old, their lessons about sweet, sweet romancing persist.</p>
-			<hr>
+			<p style="margin-bottom: 1em">The Lais of Marie de France are a series of twelve short poems about courtly love composed in the twelfth century. Although they are nearly a thousand years old, their lessons about sweet, sweet romancing persist.</p>
 
 			<div class="instructions">
-				<h2>generate your own comic lai:</h2>
+				<h2 class=>generate your own comic lai:</h2>
 
 				<form
 					id="laiGenerator"
@@ -24,7 +23,7 @@
 					method="#"
 				>
 					<div class="sliders">
-						<img src="images/gentle.jpg">
+						<img src="images/gentle.jpg" style="margin-right: 1em">
 						<input
 							id="playerBrutality"
 							name="playerBrutality"
@@ -36,7 +35,7 @@
 						<img src="images/brutal.jpg">
 					</div>
 					<div class="sliders">
-						<img src="images/honorable.jpg">
+						<img src="images/honorable.jpg" style="margin-right: 1em">
 						<input id="playerPassion"
 						   name="playerPassion"
 						   type="range"
@@ -57,14 +56,11 @@
 						step="1"
 					/>-->
 					<br>
-					<input type="submit" id="btn" class="button" value="go"/>
+					<input type="image" id="btn" class="button" value="go" src="images/go.jpg">
 				</form>
 			</div>
 
-			<div id="lai">
-			</div>
-
-			<hr>
+			<div id="lai"></div>
 
 			<div id="aboutHead" onClick="expandAbout()"><img src="images/about.jpg">
 			</div>
@@ -84,7 +80,7 @@
 				<a href="mailto:joycer@teenyrobots.net?Subject=Hello%20friend" target="_blank"><img src="images/mail.jpg"></a>
 			</div>
 		</div>
-
+	</div>
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
