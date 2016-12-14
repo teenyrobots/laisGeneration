@@ -1,8 +1,8 @@
 // Javascript for Lais of Marie de France
 
 /*TODO
-[ ] redraw panels
-[ ] properly categorize them
+[x] redraw panels
+[x] properly categorize them
 */
 
 //jQuery initialize
