@@ -8,6 +8,11 @@ body img {
 	max-width: 100%;
 }
 
+p {
+	font-size: 1.25em;
+	text-align: center;
+}
+
 .mainContainer {
 	width: 100%;
 	max-width: 700px;
